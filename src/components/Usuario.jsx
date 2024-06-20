@@ -7,8 +7,7 @@ function Usuario({cod, nome, idade, onDelete}) {
         <>
             
             <div className={styles.container}>
-                <h2>usuario</h2>
-                <p>Nome: {nome}</p>
+                <h2>{nome}</h2>
                 <p>Idade: {idade}</p>
                 <button onClick={() => onDelete(cod)}>Excluir</button>
             </div>

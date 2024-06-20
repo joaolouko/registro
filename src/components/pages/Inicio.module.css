@@ -51,6 +51,13 @@
     cursor: pointer;
 }
 
+.msg{
+    background-color: rgb(40, 180, 87);
+    margin-top: .5em;
+    padding: .2em;
+    border-radius: 5px;
+    text-align: center;
+}
 
 @media(max-width: 500px) {
     .container{

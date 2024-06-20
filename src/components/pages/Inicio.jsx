@@ -7,6 +7,7 @@ function Inicio() {
     const [data, setData] = useState([]);
     const [nome, setNome] = useState('');
     const [idade, setIdade] = useState('');
+    const [message, setMessage] = useState('');
 
 
 
@@ -20,11 +21,13 @@ function Inicio() {
             setData([...data, response.data]);
             setNome('');
             setIdade('');
-            alert(`Usuário ${nome} cadastrado com sucesso`)
+            setMessage(`Usuário ${nome} cadastrado com sucesso`);
+            setTimeout(() => setMessage(''), 2000);
         } catch (error) {
             console.error('Erro ao enviar dados:', error);
+            setMessage('Erro ao enviar dados');
+            setTimeout(() => setMessage(''), 2000)
         }
-        
     };
 
 
@@ -61,7 +64,9 @@ function Inicio() {
 
                         <br />
                         <button type="submit">Enviar</button>
+                        {message && <p className={styles.msg}>{message}</p>}
                     </form>
+                    
                 </div>
 
                 <div className={styles.containerNav}>
